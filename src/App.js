@@ -1,16 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Welcome from "./components/WelcomePage/Welcome";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Price-Tracker-ZMP
-        </p>
-      </header>
-    </div>
+    <>
+        <Welcome/>
+    </>
   );
 }
 
