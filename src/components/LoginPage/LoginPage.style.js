@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import bg_image from '../../images/temporary-background-image.jpg';
 
-export const WelcomePage = styled.div`
-	.welcome-page-container {
+export const LoginPageElement = styled.div`
+	.login-page-container {
 		width: 100vw;
 		height: 100vh;
 		background: url(${bg_image}) no-repeat center;
@@ -14,7 +14,7 @@ export const WelcomePage = styled.div`
 		justify-content: space-between;
 	}
 
-	.welcome-page-container .login-sign-in-container {
+	.login-page-container .login-sign-in-container {
 		/* border: 1px solid #fff; */
 		height: 3rem;
 		display: flex;
@@ -24,7 +24,7 @@ export const WelcomePage = styled.div`
 		padding-right: 1rem;
 	}
 
-	.welcome-page-container .login-sign-in-container a {
+	.login-page-container .login-sign-in-container p {
 		color: #fff;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -32,44 +32,50 @@ export const WelcomePage = styled.div`
 		padding: 0 0.4rem;
 	}
 
-	.welcome-page-container .login-sign-in-container a:hover {
+	.login-page-container .login-sign-in-container p:hover {
 		cursor: pointer;
 	}
 
-	.welcome-page-container .login-sign-in-container span {
+	.login-page-container .login-sign-in-container span {
 		color: #fff;
 		padding: 0 0.2rem;
 	}
 
-	.welcome-page-container .form-container {
+	.login-page-container .form-container {
 		/* border: 1px solid #fff; */
+		/* width: 100%; */
 		display: flex;
-		flex-direction: row;
+		/* flex-direction: row; */
+		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		/* justify-content: center; */
 	}
 
-	.welcome-page-container form {
+	.login-page-container .form-container .login-container {
+		padding: 0;
+		margin: 0;
+	}
+
+	.login-page-container .form-container form {
 		/* border: 1px solid yellow; */
 		width: 20rem;
-		height: 20rem;
+		/* height: 20rem; */
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
 
-	.welcome-page-container form .form-item {
+	.login-page-container .form-container form .form-item {
 		width: 100%;
 		display: block;
 		margin: 1rem;
 		color: #fff;
 	}
-	.welcome-page-container form .form-item label {
+	.login-page-container .form-container form .form-item label {
 		font-size: 1.7rem;
 	}
-
-	.welcome-page-container form .form-item input {
+	.login-page-container .form-container form .form-item input {
 		color: #fff;
 		font-family: 'Courier New', sans-serif;
 		font-size: 1.3rem;
@@ -81,7 +87,29 @@ export const WelcomePage = styled.div`
 		border: 1px solid #fff;
 	}
 
-	.welcome-page-container .social-media-container {
+	.login-page-container .form-container .button-container {
+		/* border: 1px solid orange; */
+		display: flex;
+		flex-direction: row;
+		/* align-items: flex-end; */
+		justify-content: flex-end;
+	}
+
+	.login-page-container .form-container .button-container button {
+		/* background: none; */
+		font-size: 1.7rem;
+		font-family: 'Courier New', Courier, monospace;
+		background: none;
+		color: #fff;
+		border: 1px solid #fff;
+		border-radius: 10px;
+		padding: 0.2rem 1rem;
+	}
+	.login-page-container .form-container .button-container button:hover {
+		cursor: pointer;
+	}
+
+	.login-page-container .social-media-container {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -89,7 +117,7 @@ export const WelcomePage = styled.div`
 		padding: 2rem;
 	}
 
-	.welcome-page-container .social-media-container .social-media-tile {
+	.login-page-container .social-media-container .social-media-tile {
 		border: 1.5px solid #fff;
 		font-size: 1.1rem;
 		padding: 0.3rem 1rem;
@@ -97,7 +125,7 @@ export const WelcomePage = styled.div`
 		border-radius: 30px;
 	}
 
-	.welcome-page-container .social-media-container .social-media-tile a {
+	.login-page-container .social-media-container .social-media-tile a {
 		/* border: 1px solid red; */
 		text-decoration: none;
 		text-transform: uppercase;
