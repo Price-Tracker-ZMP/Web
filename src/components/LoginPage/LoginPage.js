@@ -8,7 +8,7 @@ const LoginPage = () => {
 		setActiveRegister(true);
 	};
 
-	const registerDisactivation = () => {
+	const registerDeactivation = () => {
 		setActiveRegister(false);
 	};
 
@@ -17,9 +17,16 @@ const LoginPage = () => {
 			<LoginPageElement>
 				<div className='login-page-container'>
 					<div className='login-sign-in-container'>
-						<p onClick={registerDisactivation}>Login</p>
+						<p
+							id={activeRegister ? '' : 'active'}
+							onClick={registerDeactivation}
+						>
+							Login
+						</p>
 						<span>/</span>
-						<p onClick={registerActivation}>Sign in</p>
+						<p id={activeRegister ? 'active' : ''} onClick={registerActivation}>
+							Sign in
+						</p>
 					</div>
 
 					{activeRegister ? (
@@ -28,16 +35,16 @@ const LoginPage = () => {
 							<div className='login-container'>
 								<form>
 									<div className='form-item'>
-										<label>Email - register</label>
-										<input type='text' />
+										<label>Email</label>
+										<input id='email-input' type='text' autoFocus />
 									</div>
 									<div className='form-item'>
 										<label>Password</label>
-										<input type='password' />
+										<input id='password-input' type='password' />
 									</div>
 									<div className='form-item'>
 										<label>Repeat password</label>
-										<input type='password' />
+										<input id='repeat-password-input' type='password' />
 									</div>
 								</form>
 								<div className='button-container'>
@@ -51,12 +58,12 @@ const LoginPage = () => {
 							<div className='login-container'>
 								<form>
 									<div className='form-item'>
-										<label>Email - login</label>
-										<input type='text' />
+										<label>Email</label>
+										<input id='validationError' type='text' autoFocus />
 									</div>
 									<div className='form-item'>
 										<label>Password</label>
-										<input type='password' />
+										<input id='validationError' type='password' />
 									</div>
 								</form>
 								<div className='button-container'>

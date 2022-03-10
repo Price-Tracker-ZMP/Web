@@ -1,21 +1,15 @@
 import styled from 'styled-components';
-import bg_image from '../../images/temporary-background-image.jpg';
 
 export const LoginPageElement = styled.div`
 	.login-page-container {
 		width: 100vw;
 		height: 100vh;
-		background: url(${bg_image}) no-repeat center;
-		background-size: cover;
-		//background-position: center;
-		//background-repeat: no-repeat;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 	}
 
 	.login-page-container .login-sign-in-container {
-		/* border: 1px solid #fff; */
 		height: 3rem;
 		display: flex;
 		flex-direction: row;
@@ -32,6 +26,11 @@ export const LoginPageElement = styled.div`
 		padding: 0 0.4rem;
 	}
 
+	#active {
+		border-bottom: 1px solid #fff;
+		padding: 0.2rem 0.4rem;
+	}
+
 	.login-page-container .login-sign-in-container p:hover {
 		cursor: pointer;
 	}
@@ -42,13 +41,10 @@ export const LoginPageElement = styled.div`
 	}
 
 	.login-page-container .form-container {
-		/* border: 1px solid #fff; */
-		/* width: 100%; */
+		width: 100%;
 		display: flex;
-		/* flex-direction: row; */
 		flex-direction: column;
 		align-items: center;
-		/* justify-content: center; */
 	}
 
 	.login-page-container .form-container .login-container {
@@ -57,9 +53,7 @@ export const LoginPageElement = styled.div`
 	}
 
 	.login-page-container .form-container form {
-		/* border: 1px solid yellow; */
 		width: 20rem;
-		/* height: 20rem; */
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -77,7 +71,7 @@ export const LoginPageElement = styled.div`
 	}
 	.login-page-container .form-container form .form-item input {
 		color: #fff;
-		font-family: 'Courier New', sans-serif;
+		/* font-family: 'Courier New', sans-serif; */
 		font-size: 1.3rem;
 		width: 100%;
 		padding: 0.5rem 1rem;
@@ -85,21 +79,20 @@ export const LoginPageElement = styled.div`
 		text-transform: none;
 		border-radius: 5px;
 		border: 1px solid #fff;
+		outline: none;
 	}
 
 	.login-page-container .form-container .button-container {
-		/* border: 1px solid orange; */
 		display: flex;
 		flex-direction: row;
-		/* align-items: flex-end; */
 		justify-content: flex-end;
+		padding: 10px 0;
 	}
 
 	.login-page-container .form-container .button-container button {
-		/* background: none; */
-		font-size: 1.7rem;
-		font-family: 'Courier New', Courier, monospace;
 		background: none;
+		font-size: 1.7rem;
+		/* font-family: 'Courier New', Courier, monospace; */
 		color: #fff;
 		border: 1px solid #fff;
 		border-radius: 10px;
@@ -107,6 +100,7 @@ export const LoginPageElement = styled.div`
 	}
 	.login-page-container .form-container .button-container button:hover {
 		cursor: pointer;
+		background-color: rgba(255, 255, 255, 0.2);
 	}
 
 	.login-page-container .social-media-container {
@@ -126,7 +120,6 @@ export const LoginPageElement = styled.div`
 	}
 
 	.login-page-container .social-media-container .social-media-tile a {
-		/* border: 1px solid red; */
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 500;
