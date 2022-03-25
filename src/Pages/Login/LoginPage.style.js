@@ -50,6 +50,8 @@ export const LoginPageElement = styled.div`
 	.login-page-container .form-container .login-container {
 		padding: 0;
 		margin: 0;
+		/* border: 1px solid yellow; */
+		max-width: 20rem;
 	}
 
 	.login-page-container .form-container form {
@@ -78,8 +80,16 @@ export const LoginPageElement = styled.div`
 		background: none;
 		text-transform: none;
 		border-radius: 5px;
-		border: 1px solid #fff;
+		border: 1px solid ${props => (props.showInfo ? 'red' : 'white')};
 		outline: none;
+	}
+	.login-page-container .form-container .error {
+		word-wrap: break-word;
+	}
+
+	.login-page-container .form-container .error .error-message {
+		color: red;
+		word-wrap: break-word;
 	}
 
 	.login-page-container .form-container .button-container {

@@ -6,11 +6,11 @@ const GlobalStyles = createGlobalStyle`
 	   margin: 0;
 	   padding: 0;
 	   box-sizing: border-box;
-      font-family: 'Courier New', Courier,   monospace;
+      font-family: 'Courier New', Courier;
    }
 
    :root {
-	   font-size: 16px;
+	   /* font-size: 16px; */
    }
 
    body {
@@ -18,6 +18,10 @@ const GlobalStyles = createGlobalStyle`
 	   background-size: cover;
 	   background-position: center;
 	   background-repeat: no-repeat;
+      width: 100vw;
+      height: 100vh;
+      color: white;
+      font-size: 16px;
    }
 `;
 

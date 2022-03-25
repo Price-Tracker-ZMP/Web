@@ -1,11 +1,22 @@
-import LoginPage from './components/LoginPage/LoginPage.js';
+import {
+	BrowserRouter as BrowserRouter,
+	Routes,
+	Route,
+} from 'react-router-dom';
+import LoginPage from './Pages/Login/LoginPage.js';
 import GlobalStyles from './globalStyles';
+import Sidebar from './components/Sidebar.js';
 
 function App() {
 	return (
 		<>
 			<GlobalStyles />
-			<LoginPage />
+			<BrowserRouter>
+				{/* <Routes>
+					<Route path='/' exact element={<HomePage />} />
+					<Route path='/login' exact element={<LoginPage />} />
+				</Routes> */}
+			</BrowserRouter>
 		</>
 	);
 }
