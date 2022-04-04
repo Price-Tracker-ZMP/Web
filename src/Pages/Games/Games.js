@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HomePageElement } from './HomePage.style.js';
-import Logout from '../../components/Logout.js';
-import Sidebar from '../../components/Sidebar.js';
+import Logout from '../../components/Logout';
+import Sidebar from '../../components/Sidebar';
+import { GamesStyle } from './Games.style';
 
-const HomePage = () => {
+const Games = () => {
 	let navigate = useNavigate();
 	useEffect(() => {
 		if (!localStorage.getItem('authToken')) {
@@ -14,15 +14,15 @@ const HomePage = () => {
 
 	return (
 		<>
-			<HomePageElement>
-				<Logout />
+			<GamesStyle>
 				<Sidebar />
+				<Logout />
 				<div className='main'>
-					<p>HomePage</p>
+					<p>Games</p>
 				</div>
-			</HomePageElement>
+			</GamesStyle>
 		</>
 	);
 };
 
-export default HomePage;
+export default Games;

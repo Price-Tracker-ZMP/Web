@@ -4,15 +4,20 @@ import { useNavigate } from 'react-router-dom';
 
 const LogoutStyle = styled.div`
 	padding: 10px 20px;
+	z-index: 99;
+	position: fixed;
+	right: 0px;
+	top: 0px;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	font-size: 1.2rem;
 	height: 40px;
-	border-bottom: 1px solid white;
+	/* border-bottom: 1px solid white; */
 
 	p {
 		padding: 0.2rem 0.4rem;
+		border-bottom: 1px solid transparent;
 	}
 
 	p:hover {

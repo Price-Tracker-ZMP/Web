@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
       height: 100vh;
       color: white;
       font-size: 16px;
+      overflow: hidden;
    }
 `;
 

@@ -1,14 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 //home
-import { IoHome, IoHomeSharp, IoHomeOutline } from 'react-icons/io5';
+import {
+	IoHome,
+	IoHomeSharp,
+	IoHomeOutline,
+	IoInformation,
+	IoInformationSharp,
+	IoInformationOutline,
+} from 'react-icons/io5';
 //gry
-import { FaTh, FaThList, FaThLarge, FaRegListAlt } from 'react-icons';
+import {
+	FaTh,
+	FaThList,
+	FaThLarge,
+	FaRegListAlt,
+	FaBuffer,
+	FaInfo,
+} from 'react-icons/fa';
 //dodawanie
-import { GrAdd, GrFormAdd } from 'react-icons/gr';
+import { IoMdAdd } from 'react-icons/io';
+import { IoAdd, IoAddOutline, IoAddSharp } from 'react-icons/io5';
 
 const SidebarElement = styled.div`
-	border: 1px solid white;
+	/* border: 1px solid white; */
+	z-index: 99;
 	position: fixed;
 	left: 0px;
 	top: 0px;
@@ -26,13 +43,42 @@ const SidebarElement = styled.div`
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		/* margin: 100px 0px; */
-		border: 1px dashed white;
 	}
 	.box {
 		width: 100%;
 		padding: 20px 0;
-		border: 1px solid yellow;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.element {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			font-weight: 500;
+			font-size: 1.2rem;
+		}
+		svg {
+			color: white;
+			font-size: 5rem;
+			padding: 10px;
+			margin: 1px 0 0 0;
+			border-top: none;
+			border: 1px solid transparent;
+		}
+
+		svg:hover {
+			border: 1px solid white;
+			border-radius: 15%;
+			cursor: pointer;
+		}
 	}
 `;
 
@@ -42,24 +88,37 @@ const Sidebar = () => {
 			<SidebarElement>
 				<div className='box-container'>
 					<div className='box'>
-						<p>Home</p>
-						<IoHome />
-						<IoHomeSharp />
-						<IoHomeOutline />
-						{/* ikona */}
+						<div className='element'>
+							<p>Home</p>
+							<Link to='/'>
+								<IoHomeSharp />
+							</Link>
+						</div>
 					</div>
 					<div className='box'>
-						<p>Games</p>
-						{/* ikona */}
+						<div className='element'>
+							<p>Games</p>
+							<Link to='/games'>
+								<FaBuffer />
+							</Link>
+						</div>
 					</div>
 					<div className='box'>
-						<p>Add Game</p>
-						{/* ikona */}
+						<div className='element'>
+							<p>Add Game</p>
+							<Link to='/add-game'>
+								<IoAddSharp />
+							</Link>
+						</div>
 					</div>
 					<div className='box'>
-						<p>Info</p>
-						{/* // zart o tym ze to nasz aplikacja postala bez strowrzenia ani grama CO2*/}
-						{/* ikona */}
+						<div className='element'>
+							<p>Info</p>
+							<Link to='/info'>
+								<IoInformationSharp />
+							</Link>
+							{/* // zart o tym ze to nasz aplikacja postala bez strowrzenia ani grama CO2*/}
+						</div>
 					</div>
 				</div>
 			</SidebarElement>

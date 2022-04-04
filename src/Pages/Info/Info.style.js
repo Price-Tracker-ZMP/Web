@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HomePageElement = styled.div`
+export const InfoStyle = styled.div`
 	.main {
 		height: 100px;
 		display: flex;

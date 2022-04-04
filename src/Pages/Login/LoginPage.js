@@ -60,7 +60,11 @@ const LoginPage = () => {
 			return setShowInfo(true);
 		}
 
-		const response = await fetch('http://localhost:5001/auth/register', {
+		const registerUrlDev = 'http://localhost:5001/auth/register';
+		const registerUrlProduction =
+			'https://zmp-price-tracker.herokuapp.com/auth/register';
+
+		const response = await fetch(registerUrlProduction, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -81,7 +85,7 @@ const LoginPage = () => {
 		setRepeatPasswordReg('');
 
 		if (data.status) {
-			setInfo(data.content.message);
+			setInfo(data.message);
 			setShowInfo(true);
 			setTimeout(() => {
 				setShowInfo(false);
@@ -116,7 +120,11 @@ const LoginPage = () => {
 			return setInfo('Set password');
 		}
 
-		const response = await fetch('http://localhost:5001/auth/login', {
+		const loginUrlDev = 'http://localhost:5001/auth/login';
+		const loginUrlProduction =
+			'https://zmp-price-tracker.herokuapp.com/auth/login';
+
+		const response = await fetch(loginUrlProduction, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

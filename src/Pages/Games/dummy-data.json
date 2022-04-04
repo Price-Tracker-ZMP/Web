@@ -1,0 +1,26 @@
+[
+	{
+		"gameName": "Metro Exodus",
+		"image": "IMG",
+		"Studio": "4A Games",
+		"price": "12700"
+	},
+	{
+		"gameName": "Coffee Talk",
+		"image": "IMG",
+		"Studio": "Toge Productions",
+		"price": "3195"
+	},
+	{
+		"gameName": "Little Nightmares",
+		"image": "IMG",
+		"Studio": "Tarsier Studios",
+		"price": "7999"
+	},
+	{
+		"gameName": "Don't Starve",
+		"image": "IMG",
+		"Studio": "Klei Entertainment",
+		"price": "3599"
+	}
+]
