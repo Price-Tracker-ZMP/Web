@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const AddGameStyles = styled.div`
 	.container {
 		/* border: 1px solid white; */
-		/* height: 100vh; */
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 10rem;
+		padding-top: 10rem;
 	}
 
 	.search-form {
@@ -25,9 +25,34 @@ export const AddGameStyles = styled.div`
 		color: #fff;
 		font-size: 1.3rem;
 		border: 1px solid white;
-		border-radius: 20px;
-		padding: 1.2rem 1.5rem;
+		border-radius: 40px;
+		padding: 1.4rem 2.5rem;
 		margin: 1rem;
 		outline: none;
+	}
+	.container .list {
+		border: 1px solid white;
+		max-height: 25rem;
+		overflow: hidden;
+		overflow-y: scroll;
+		padding: 0 0.5rem;
+
+		::-webkit-scrollbar {
+			width: 2px;
+			background: transparent;
+		}
+		::-webkit-scrollbar-track {
+			width: 2px;
+			background-color: rgba(230, 230, 230, 0.1);
+		}
+		::-webkit-scrollbar-thumb {
+			width: 3px;
+			background-color: white;
+			/* background: #888; */
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			/* background: #555; */
+		}
 	}
 `;
