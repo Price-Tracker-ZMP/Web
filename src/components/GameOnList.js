@@ -61,6 +61,7 @@ const GameOnList = ({ appid, name }) => {
 						<p>{appid}</p>
 						<button>+</button>
 					</div>
+					<canvas id={"graph"+appid}></canvas>
 				</div>
 			</GameOnListStyle>
 		</>
