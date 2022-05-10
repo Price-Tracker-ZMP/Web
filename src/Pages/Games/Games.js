@@ -120,6 +120,9 @@ const Games = () => {
 												<p className='price'>
 													{setCommaIntoString(game.priceFinal)}
 												</p>
+												<div id='graph-container'>
+												<canvas id={'graph' + game.steam_appid} onLoad={generateGraph(game.steam_appid)}></canvas>
+												</div>
 												<button
 													onClick={() =>
 														deleteGame(game.steam_appid)
@@ -128,9 +131,7 @@ const Games = () => {
 													-
 												</button>
 											</div>
-											<div id='graph-container'>
-												<canvas id={'graph' + game.steam_appid} onLoad={generateGraph(game.steam_appid)}></canvas>
-											</div>
+
 									</div>
 								);
 							})}
