@@ -15,8 +15,9 @@ const Games = () => {
 			return navigate('/login');
 		}
 
-		var urlDev = 'http://localhost:5001/user-info/user-games';
-		var urlProduction = 'http://zmp-price-tracker.herokuapp.com/user-info/user-games';
+		var urlDev = 'https://localhost:5001/user-info/user-games';
+		var urlProduction =
+			'https://zmp-price-tracker.herokuapp.com/user-info/user-games';
 
 		fetch(urlProduction, {
 			headers: {
@@ -37,8 +38,8 @@ const Games = () => {
 	}, []);
 
 	const deleteGame = appid => {
-		var urlDev = 'http://localhost:5001/delete/game/:gameId';
-		var urlProduction = 'http://zmp-price-tracker.herokuapp.com/delete/game/:gameId';
+		var urlDev = 'https://localhost:5001/delete/game/:gameId';
+		var urlProduction = 'https://zmp-price-tracker.herokuapp.com/delete/game/:gameId';
 
 		fetch(urlProduction.replace(':gameId', appid), {
 			method: 'DELETE',
@@ -79,7 +80,6 @@ const Games = () => {
 												alt={game.name + 'photo'}
 											/>
 											<p>{game.name}</p>
-											<p>{game.steam_appid}</p>
 											<p className='price'>
 												{setCommaIntoString(game.priceFinal)}
 											</p>

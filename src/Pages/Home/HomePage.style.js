@@ -7,6 +7,17 @@ export const HomePageElement = styled.div`
 		align-items: center;
 		justify-content: center;
 		font-size: 2rem;
-		border: 1px solid white;
+		flex-direction: column;
+		/* border: 1px solid white; */
+	}
+
+	.main a {
+		color: white;
+		font-size: 2rem;
+		text-decoration: underline;
+
+		&:hover {
+			color: rgba(255, 0, 0, 0.6);
+		}
 	}
 `;

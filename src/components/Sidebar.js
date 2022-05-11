@@ -111,15 +111,6 @@ const Sidebar = () => {
 							</Link>
 						</div>
 					</div>
-					<div className='box'>
-						<div className='element'>
-							<p>Info</p>
-							<Link to='/info'>
-								<IoInformationSharp />
-							</Link>
-							{/* // zart o tym ze to nasz aplikacja postala bez strowrzenia ani grama CO2*/}
-						</div>
-					</div>
 				</div>
 			</SidebarElement>
 		</>

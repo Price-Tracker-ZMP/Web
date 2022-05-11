@@ -55,7 +55,7 @@ export const GamesStyle = styled.div`
 		height: 5rem;
 		border: 1px solid white;
 		border-radius: 50px;
-		margin: 5px 0;
+		margin: 5px 10px;
 	}
 	#content {
 		width: 100%;

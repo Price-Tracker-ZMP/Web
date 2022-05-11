@@ -19,6 +19,12 @@ const HomePage = () => {
 				<Sidebar />
 				<div className='main'>
 					<p>HomePage</p>
+					<a
+						href='https://play.google.com/store/apps/details?id=com.merfeusz.pricetrackermobile'
+						target='_blank'
+					>
+						Apka mobilna
+					</a>
 				</div>
 			</HomePageElement>
 		</>
