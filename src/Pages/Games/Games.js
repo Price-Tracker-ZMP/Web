@@ -47,7 +47,7 @@ const Games = () => {
 
 	const deleteGame = (appid, name) => {
 		var urlDev = 'http://localhost:5001/delete/game/:gameId';
-		var urlProduction = '/:gameId';
+		var urlProduction = 'https://zmp-price-tracker.herokuapp.com/delete/game/:gameId';
 
 		fetch(urlProduction.replace(':gameId', appid), {
 			method: 'DELETE',
