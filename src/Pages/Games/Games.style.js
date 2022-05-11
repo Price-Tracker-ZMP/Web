@@ -86,5 +86,13 @@ export const GamesStyle = styled.div`
 			cursor: pointer;
 			background: rgba(255, 255, 255, 0.3);
 		}
+		
 	}
+	#graph-container{
+		width: 200px;
+		height: 70px;
+		margin: auto;
+		border: 5px;
+
+		}
 `;

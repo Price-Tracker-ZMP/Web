@@ -4,6 +4,8 @@ import Logout from '../../components/Logout';
 import Sidebar from '../../components/Sidebar';
 import GameOnList from '../../components/GameOnList';
 import { GamesStyle } from './Games.style';
+import ChartConfig from './ChartConfig.js';
+import Chart from 'chart.js/auto';
 
 const Games = () => {
 	const [gamesList, setGamesList] = useState([]);
@@ -37,9 +39,15 @@ const Games = () => {
 			});
 	}, []);
 
-	const deleteGame = appid => {
-		var urlDev = 'https://localhost:5001/delete/game/:gameId';
-		var urlProduction = 'https://zmp-price-tracker.herokuapp.com/delete/game/:gameId';
+	async function generateGraph(id) {
+		let data = await GetHistory(id);
+		let config = ChartConfig.getChartConfig(data);
+		new Chart(document.getElementById('graph' + id), config);
+	}
+
+	const deleteGame = (appid, name) => {
+		var urlDev = 'http://localhost:5001/delete/game/:gameId';
+		var urlProduction = '/:gameId';
 
 		fetch(urlProduction.replace(':gameId', appid), {
 			method: 'DELETE',
@@ -56,6 +64,46 @@ const Games = () => {
 			',' +
 			string.substring(string.length - 2, string.length)
 		);
+	};
+
+	const GetHistory = async appid => {
+		var urlDev = 'http://localhost:5001/delete/game/:gameId';
+		var urlProduction =
+			'http://zmp-price-tracker.herokuapp.com/get/game-price-history/:gameId';
+
+		return await fetch(urlProduction.replace(':gameId', appid), {
+			method: 'GET',
+			headers: {
+				authentication: localStorage.getItem('authToken'),
+			},
+		})
+			.then(result => result.json())
+			.then(result => {
+				let dataset = {
+					dates: [],
+					prices: [],
+				};
+
+				for (let i = 0; i < result.content.dateFinal.length; i++) {
+					let d = new Date(result.content.dateFinal[i]);
+					dataset.dates.push(
+						d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear()
+					);
+					dataset.prices.push(result.content.priceFinal[i] / 100);
+				}
+
+				const data = {
+					labels: dataset.dates,
+					datasets: [
+						{
+							data: dataset.prices,
+							fill: false,
+							borderColor: 'rgb(75, 192, 192)',
+						},
+					],
+				};
+				return data;
+			});
 	};
 
 	return (
@@ -83,6 +131,14 @@ const Games = () => {
 											<p className='price'>
 												{setCommaIntoString(game.priceFinal)}
 											</p>
+											<div id='graph-container'>
+												<canvas
+													id={'graph' + game.steam_appid}
+													onLoad={generateGraph(
+														game.steam_appid
+													)}
+												></canvas>
+											</div>
 											<button
 												onClick={() =>
 													deleteGame(game.steam_appid)
