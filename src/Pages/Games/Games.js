@@ -7,18 +7,18 @@ import { GamesStyle } from './Games.style';
 
 const Games = () => {
 	const [gamesList, setGamesList] = useState([]);
+	const [isListEmpty, setIsListEmpty] = useState(true);
 
 	let navigate = useNavigate();
 	useEffect(() => {
 		if (!localStorage.getItem('authToken')) {
 			return navigate('/login');
 		}
-		// fetchUserGames();
 
 		var urlDev = 'http://localhost:5001/user-info/user-games';
 		var urlProduction = 'http://zmp-price-tracker.herokuapp.com/user-info/user-games';
 
-		fetch(urlDev, {
+		fetch(urlProduction, {
 			headers: {
 				method: 'GET',
 				authentication: localStorage.getItem('authToken'),
@@ -28,14 +28,19 @@ const Games = () => {
 			.then(res => res.json())
 			.then(res => {
 				setGamesList(res.content);
+				console.log('gamesList.length', gamesList.length);
+				if (gamesList.length > 0) {
+					setIsListEmpty(false);
+					console.log('isListEmpty', isListEmpty);
+				}
 			});
 	}, []);
 
-	const deleteGame = (appid, name) => {
+	const deleteGame = appid => {
 		var urlDev = 'http://localhost:5001/delete/game/:gameId';
 		var urlProduction = 'http://zmp-price-tracker.herokuapp.com/delete/game/:gameId';
 
-		fetch(urlDev.replace(':gameId', appid), {
+		fetch(urlProduction.replace(':gameId', appid), {
 			method: 'DELETE',
 			headers: {
 				authentication: localStorage.getItem('authToken'),
