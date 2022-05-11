@@ -46,7 +46,7 @@ const Games = () => {
 	}
 
 	const deleteGame = (appid, name) => {
-		var urlDev = 'http://localhost:5001/delete/game/:gameId';
+		var urlDev = 'https://localhost:5001/delete/game/:gameId';
 		var urlProduction = 'https://zmp-price-tracker.herokuapp.com/delete/game/:gameId';
 
 		fetch(urlProduction.replace(':gameId', appid), {
@@ -67,9 +67,9 @@ const Games = () => {
 	};
 
 	const GetHistory = async appid => {
-		var urlDev = 'http://localhost:5001/delete/game/:gameId';
+		var urlDev = 'https://localhost:5001/delete/game/:gameId';
 		var urlProduction =
-			'http://zmp-price-tracker.herokuapp.com/get/game-price-history/:gameId';
+			'https://zmp-price-tracker.herokuapp.com/get/game-price-history/:gameId';
 
 		return await fetch(urlProduction.replace(':gameId', appid), {
 			method: 'GET',
